@@ -11,7 +11,6 @@
     "lint": "eslint src",
     "watch": "rollup -c --watch",
     "sslkey": "shx mkdir -p _build && shx openssl req -new -newkey rsa:4096 -sha512 -days 365 -nodes -x509 -subj '/C=US/ST=Denial/L=Springfield/O=Dis/CN=www.example.com' -keyout _build/key.pem -out _build/cert.pem",
-    "postinstall": "npm run sslkey",
     "dev:ssl": "npm run dev -- --ssl --cert=_build/cert.pem --key=_build/key.pem",
     "dev": "budo src/index.js:build/index.js --live --open --cors --base=/examples/",
     "start": "npm run dev"
