@@ -1,0 +1,67 @@
+{
+  "name": "lovrjs",
+  "version": "1.0.0",
+  "private": "true",
+  "description": "LÖVR port to front-end JavaScript.",
+  "main": "dev.js",
+  "scripts": {
+    "build": "npm run lib && npm run dist && node prepend_license.js && echo 'Packaging complete.'",
+    "dist": "rollup -c && babel _dist/ovrui.js -o _dist/ovrui.min.js --presets=babili --no-babelrc",
+    "lib": "babel src --out-dir lib --copy-files --presets=es2015",
+    "lint": "eslint src",
+    "watch": "rollup -c --watch",
+    "sslkey": "shx mkdir -p _build && shx openssl req -new -newkey rsa:4096 -sha512 -days 365 -nodes -x509 -subj '/C=US/ST=Denial/L=Springfield/O=Dis/CN=www.example.com' -keyout _build/key.pem -out _build/cert.pem",
+    "postinstall": "npm run sslkey",
+    "dev:ssl": "npm run dev -- --ssl --cert=_build/cert.pem --key=_build/key.pem",
+    "dev": "budo src/index.js:build/index.js --live --open --cors --base=/examples/",
+    "start": "npm run dev"
+  },
+  "dependencies": {
+    "three": "~0.80.1"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.14.0",
+    "babel-eslint": "^7.0.0",
+    "babel-plugin-external-helpers": "^6.8.0",
+    "babel-preset-babili": "0.0.2",
+    "babel-preset-es2015": "^6.14.0",
+    "budo": "github:mattdesl/budo#11f9013",
+    "cross-env": "^3.1.4",
+    "deep-assign": "^2.0.0",
+    "eslint": "^3.8.1",
+    "eslint-config-fbjs": "^1.1.1",
+    "eslint-plugin-babel": "^3.3.0",
+    "gh-pages": "^0.12.0",
+    "opn": "^4.0.2",
+    "ovrui": "^0.1.3",
+    "rollup": "^0.34.13",
+    "rollup-plugin-babel": "^2.6.1",
+    "rollup-plugin-replace": "^1.1.1",
+    "rollup-watch": "^2.5.0",
+    "shx": "^0.2.2"
+  },
+  "engines": {
+    "node": "6.9.1"
+  },
+  "repository": "webvrrocks/lovrjs",
+  "keywords": [
+    "lovrjs",
+    "lovr",
+    "love",
+    "lua",
+    "webvr",
+    "vr",
+    "oculus",
+    "rift",
+    "vive",
+    "daydream",
+    "cardboard",
+    "carmel",
+    "gearvr",
+    "gear-vr",
+    "virtualreality",
+    "virtual-reality",
+    "webvrrocks",
+    "webvr-rocks"
+  ]
+}

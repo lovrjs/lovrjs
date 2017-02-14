@@ -1,0 +1,30 @@
+{
+  "name": "LÖVR",
+  "short_name": "LÖVR",
+  "description": "LÖVR in WebVR.",
+  "lang": "en",
+  "dir": "ltr",
+  "start_url": "./?src=manifest",
+  "display": "fullscreen",
+  "lang": "en",
+  "dir": "ltr",
+  "theme_color": "#000",
+  "background_color": "#000",
+  "icons": [
+    {
+      "src": "icon-256.svg",
+      "sizes": "256x256",
+      "type": "image/svg"
+    },
+    {
+      "src": "icon-256.png",
+      "sizes": "256x256",
+      "type": "image/png"
+    },
+    {
+      "src": "favicon.ico",
+      "sizes": "16x16 32x32 48x48 64x64 256x256",
+      "type": "image/x-icon"
+    }
+  ]
+}
